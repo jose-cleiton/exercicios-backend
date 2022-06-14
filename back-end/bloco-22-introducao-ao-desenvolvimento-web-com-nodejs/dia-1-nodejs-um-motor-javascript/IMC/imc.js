@@ -1,6 +1,8 @@
+const radline = require('readline-sync');
 
-const PESO_PADRAO_EM_KG = 80; // Você pode utilizar o valor que desejar aqui
-const ALTURA_PADRAO_EM_CM = 178; // Você pode utilizar o valor que desejar aqui
+
+
+
 
 const calculaImc = (peso, altura) => {
   console.log(`Peso: ${peso}, Altura: ${altura}`);
@@ -15,9 +17,15 @@ const calculaImc = (peso, altura) => {
 
 // A função main é o ponto de partida do nosso programa 
 const main = () => {
+  const PESO_PADRAO_EM_KG = parseFloat(radline.question('Peso: '));
+  const ALTURA_PADRAO_EM_CM = parseFloat(radline.question('Altura: '));
+
+
   const imc = calculaImc(PESO_PADRAO_EM_KG, ALTURA_PADRAO_EM_CM);
 
   console.log(`IMC: ${imc.toFixed(2)}`);
 }
 
 main();
+
+
